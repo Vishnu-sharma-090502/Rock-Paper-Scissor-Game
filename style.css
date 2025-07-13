@@ -1,68 +1,125 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1f3c88, #5bc0f8);
+  color: #fff;
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
-  background-color: #081b31;
-  color: #fff;
-  height: 5rem;
-  line-height: 5rem;
-}
-
-.choice {
-  height: 165px;
-  width: 165px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.choice:hover {
-  cursor: pointer;
-  background-color: #081b31;
-}
-
-img {
-  height: 150px;
-  width: 150px;
-  object-fit: cover;
-  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  font-size: 2rem;
 }
 
 .choices {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
-  margin-top: 5rem;
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.choice {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 1rem;
+  transition: transform 0.3s, border 0.3s;
+  cursor: pointer;
+}
+
+.choice:hover {
+  transform: scale(1.1);
+}
+
+.choice img {
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  transition: border 0.3s;
+}
+
+.choice:hover img {
+  border: 5px solid #fff;
+}
+
+.choice p {
+  margin-top: 0.5rem;
+  font-weight: bold;
 }
 
 .score-board {
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  margin-top: 3rem;
-  gap: 5rem;
+  gap: 3rem;
+  margin-top: 2rem;
+  font-size: 1.2rem;
 }
 
-#user-score,
-#comp-score {
-  font-size: 4rem;
+.score p:first-child {
+  font-size: 3rem;
+  font-weight: bold;
 }
 
 .msg-container {
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 
 #msg {
-  background-color: #081b31;
-  color: #fff;
-  font-size: 2rem;
-  display: inline;
-  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  padding: 1rem 2rem;
   border-radius: 1rem;
+  font-size: 1.2rem;
+}
+
+#reset-btn {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff5959;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#reset-btn:hover {
+  background-color: #ff3030;
+}
+
+@media (max-width: 768px) {
+  .choices {
+    gap: 1rem;
+  }
+
+  .choice img {
+    height: 80px;
+    width: 80px;
+  }
+
+  .score-board {
+    gap: 1.5rem;
+  }
+
+  #msg {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  #reset-btn {
+    width: 100%;
+  }
 }
